@@ -1,8 +1,9 @@
+from operator import truediv
 from typing import List
 from euklid import euklidalgos
 
-alphabet = list('abcdefghijklmnopqrstuvwxyz'.upper())
-alphabet_mit_leerzeichen_vorne = list(' abcdefghijklmnopqrstuvwxyz'.upper())
+alphabet = list("abcdefghijklmnopqrstuvwxyz".upper())
+alphabet_mit_leerzeichen_vorne = list(" abcdefghijklmnopqrstuvwxyz".upper())
 
 class symmetric:
     # a = 0, b = 1 usw.
