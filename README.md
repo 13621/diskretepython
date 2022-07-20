@@ -29,7 +29,7 @@
 - `*verteilung*X()` liefert die Berechnungsformel und das Ergebnis für x von *verteilung* für P(X = x) zurück
 - `*verteilung*LowerAndEqualX()` liefert die Berechnungsformel und das Ergebnis für x von *verteilung* für P(X <= x) zurück
 - `*verteilung*X()` liefert die Berechnungsformel und das Ergebnis für List(x) von *verteilung* für jedes P(X = x) wieder als Liste zurück
-- Übergabeparameter werden noch als Definition hinzugefügt
+- Übergabeparameter sind als Definition hinzugefügt
 - Hinweis: mit `print()` ausführen!
 
 ### Konfidenzintervalle
