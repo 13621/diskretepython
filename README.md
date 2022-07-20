@@ -20,7 +20,7 @@
   - `classes` (Liste) enthält einfach nur die Klassen der zu testenden Stichprobe (z.B. Würfelaugen etc.) 
   - `prevalences` (Liste) enthält die zu den einzelnen Klassen gegebenen absoluten Häufigkeiten (z.B. 22-mal die 1 geworfen); Reihenfolge passend zu `classes` beachten!
   - `probabilities` (Liste) enthält die theoretischen Wahrscheinlichkeiten, der Verteilung, auf die getestet werden soll. Um die Liste zu erstellen können die vorgefertigten Funktionen in `wk-verteilungen.py` genutzt werden (z.B. `hypergeometricXList(...)` --> siehe unten)
-   - sollte die Verteilung nicht implementiert sein, kann die Liste natürlich auch manuell an der Stelle gefüllt werden mit `append()`
+   - sollte die Verteilung nicht implementiert sein, kann die Liste natürlich auch manuell an der Stelle gefüllt werden mit For-Schleife und `append()` oder komplett manuell in der Instanziierung 
  - zum Ausführen dann einfach `chiSquareTest(...)` nutzen (ohne `print()`)
   - Erklärungen zu Übergabeparametern sind in der Definition der Funktion (in VS-Code Rechtklick) zu finden 
 ### Wahrscheinlichkeitsverteilungen
