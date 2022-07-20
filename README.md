@@ -41,4 +41,6 @@
 - Hinweis: ohne `print()` ausführen!
 ### Kennwerte einer Stichprobe
 - alle möglichen Funktionen sind in `kennwerteStichprobe.py` enthalten (selbsterklärend)
+- neue Stichprobe mit `stichprobe([1, 2, 39])`
+- alle Kennwerte werden mit `print(stichprobe([1, 2, 39]))` angezeigt
 - Hinweis: mit `print()` ausführen
