@@ -1,53 +1,72 @@
 import math
 
-def mittelwert(stichprobe:list):
-    return sum(stichprobe)/len(stichprobe)
+class stichprobe:
+    def __init__(self, stichprobe: list) -> None:
+        self.stichprobe = stichprobe
 
-def median(stichprobe:list):
-    return quantil(stichprobe,0.5)
+    def mittelwert(self):
+        return sum(self.stichprobe)/len(self.stichprobe)
 
-def range(stichprobe:list):
-    return max(stichprobe) - min(stichprobe)
+    def median(self):
+        return self.quantil(0.5)
 
-def varianz(stichprobe:list):  #mit Quadrat
-    result = 0
-    for i in stichprobe:
-        result = result + (i - mittelwert(stichprobe)) * (i - mittelwert(stichprobe))
-    
-    return result/(len(stichprobe)-1)
+    def range(self):
+        return max(self.stichprobe) - min(self.stichprobe)
 
-def standardabweichung(stichprobe:list):   #ohne Quadrat
-    return math.sqrt(varianz(stichprobe))
+    def varianz(self):  #mit Quadrat
+        result = 0
+        mw = self.mittelwert()
+        for i in self.stichprobe:
+            result += (i - mw) ** 2
+        
+        return result/(len(self.stichprobe)-1)
 
-def quantil(stichprobe:list, q):
-    stichprobe.sort()
-    n = len(stichprobe)*q
+    def standardabweichung(self):   #ohne Quadrat
+        return math.sqrt(self.varianz())
 
-    if n % 1 == 0:
-        return (stichprobe[int(n-1)] + stichprobe[int(n)]) / 2
-    else:
-        return stichprobe[int(n)]
+    def quantil(self, q):
+        stichsorted = sorted(self.stichprobe)
+        n = len(stichsorted)*q
 
-def variationskoeffizient(stichprobe:list):
-    return (standardabweichung(stichprobe) / mittelwert(stichprobe))*100
+        if n % 1 == 0:
+            return (stichsorted[int(n-1)] + stichsorted[int(n)]) / 2
+        else:
+            return stichsorted[int(n)]
 
-#Umrechnung absolute/relative Häufigkeit
-def absoluteToRelative(stichprobe:list):
-    result = []
+    def variationskoeffizient(self):
+        return (self.standardabweichung() / self.mittelwert())*100
 
-    for i in stichprobe:
-        result.append(round(i/sum(stichprobe),5))
-    
-    return result
+    #Umrechnung absolute/relative Häufigkeit
+    def absoluteToRelative(self):
+        result = []
 
-def relativeToAbsolute(stichprobe:list, n):
-    result = []
+        for i in self.stichprobe:
+            result.append(round(i/sum(self.stichprobe),5))
+        
+        return result
 
-    for i in stichprobe:
-        result.append(round(i * n, 0))
+    def relativeToAbsolute(self, n):
+        result = []
 
-    return result
+        for i in self.stichprobe:
+            result.append(round(i * n, 0))
+
+        return result
+
+    def __str__(self) -> str:
+        return f"Stichprobe: {self.stichprobe}\n\tartihmetisches Mittel: {self.mittelwert()}\n\tMedian: {self.median()}\n\tRange: {self.range()}\n\tStichprobenvarianz: {self.varianz()}\n\tStichprobenabweichung: {self.standardabweichung()}\n\tVariationskoeffizient: {self.variationskoeffizient()}"
+
 
 ##########################################################input##################################################
 
-#Formeln siehe "Kennwerte einer Stichprobe Formeln.png"
+#Formeln siehe "Kennwerte einer Stichprobe Formeln.png" 
+
+stich = stichprobe([1, 2, 3])
+
+print(stich.varianz())
+print(stich.median())
+print(stich.mittelwert())
+
+print(stich.quantil(0.7))
+
+print(stich)
