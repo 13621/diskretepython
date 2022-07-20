@@ -19,7 +19,23 @@
 - zu den Variablen:
   - `classes` (Liste) enthält einfach nur die Klassen der zu testenden Stichprobe (z.B. Würfelaugen etc.) 
   - `prevalences` (Liste) enthält die zu den einzelnen Klassen gegebenen absoluten Häufigkeiten (z.B. 22-mal die 1 geworfen); Reihenfolge passend zu `classes` beachten!
-  - `probabilities` (Liste) enthält die theoretischen Wahrscheinlichkeit, der Verteilung, auf die getestet werden soll. Um die Liste zu erstellen können die vorgefertigten Funktionen in `wk-verteilungen.py` genutzt werden (z.B. `hypergeometricXList(...)` --> siehe unten)
+  - `probabilities` (Liste) enthält die theoretischen Wahrscheinlichkeiten, der Verteilung, auf die getestet werden soll. Um die Liste zu erstellen können die vorgefertigten Funktionen in `wk-verteilungen.py` genutzt werden (z.B. `hypergeometricXList(...)` --> siehe unten)
    - sollte die Verteilung nicht implementiert sein, kann die Liste natürlich auch manuell an der Stelle gefüllt werden mit `append()`
- - zum Ausführen dann einfach `chiSquareTest(...)` nutzen
+ - zum Ausführen dann einfach `chiSquareTest(...)` nutzen (ohne `print()`)
   - Erklärungen zu Übergabeparametern sind in der Definition der Funktion (in VS-Code Rechtklick) zu finden 
+### Wahrscheinlichkeitsverteilungen
+- ganz runter scrollen bis zum kommentierten Input
+- zu finden in `wk_verteilungen.py` (aktuell nur Hypergeometrisch implementiert)
+- `*verteilung*X()` liefert die Berechnungsformel und das Ergebnis für x von *verteilung* für P(X = x) zurück
+- `*verteilung*LowerAndEqualX()` liefert die Berechnungsformel und das Ergebnis für x von *verteilung* für P(X <= x) zurück
+- `*verteilung*X()` liefert die Berechnungsformel und das Ergebnis für List(x) von *verteilung* für jedes P(X = x) wieder als Liste zurück
+- Übergabeparameter werden noch als Definition hinzugefügt
+- Hinweis: mit `print()` ausführen!
+
+### Konfidenzintervalle
+- ganz runter scrollen bis zum kommentierten Input
+- `binomialConfidenceP()` berechnet das Konfidenzintervall für p von einer Binomialverteilung
+- `normalConfidenceMy()` berechnet das Konfigenzintervall für μ von einer Normalverteilung
+- `normalConfidenceSigma()` berechnet das Konfigenzintervall für σ von einer Normalverteilung (noch nicht implementiert)
+- Übergabeparameter sind wieder in der Definition der jeweiligen Methode erklärt
+- Hinweis: ohne `print()` ausführen!
