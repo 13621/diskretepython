@@ -99,9 +99,9 @@ def chiSquareTest(alpha, n, classes:list, prevalences:list, probabilities:list):
 
 
 ################################################input########################################################
-classes = [0,1,2,3,4]
-prevalences = [14,28,15,3,0]
-probabilities = wk_verteilungen.hypergeometricXList(32,4,10,classes)
+classes = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
+prevalences = [28,15,14,19,24]
+probabilities = [0.2,0.2,0.2,0.2,0.2]  
 
 
-chiSquareTest(0.05, 60, classes, prevalences, probabilities)
+chiSquareTest(0.05, 100, classes, prevalences, probabilities)
