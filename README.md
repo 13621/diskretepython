@@ -23,6 +23,7 @@
    - sollte die Verteilung nicht implementiert sein, kann die Liste natürlich auch manuell an der Stelle gefüllt werden mit For-Schleife und `append()` oder komplett manuell in der Instanziierung 
  - zum Ausführen dann einfach `chiSquareTest(...)` nutzen (ohne `print()`)
   - Erklärungen zu Übergabeparametern sind in der Definition der Funktion (in VS-Code Rechtklick) zu finden 
+- falls noch Zeit ist, überprüft vorsichtshalber nochmal die Werte für die Quantilen mit den Tabellen
 ### Wahrscheinlichkeitsverteilungen
 - ganz runter scrollen bis zum kommentierten Input
 - zu finden in `wk_verteilungen.py` (aktuell nur Hypergeometrisch implementiert)
