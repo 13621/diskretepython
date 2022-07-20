@@ -47,3 +47,7 @@ def relativeToAbsolute(stichprobe:list, n):
         result.append(round(i * n, 0))
 
     return result
+
+##########################################################input##################################################
+
+#Formeln siehe "Kennwerte einer Stichprobe Formeln.png"

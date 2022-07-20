@@ -6,8 +6,6 @@ import kennwerteStichproben
 
 def binomialConfidenceP(x, n, y):    
     """x = Anzahl der Erfolge; n = Anzahl der Durchführungen des Bernoulli-Experiments"""
-
-
     p = x/n
     print(f"Schätzwert p' = x/n = {p}                                     | Maximum-Likelihood-Schätzfunktion", end ="\n\n")
 
@@ -33,8 +31,6 @@ def binomialConfidenceP(x, n, y):
     print(f"p' - (c/n) * sqrt(n*p'*(1-p')) <= p <= p' + (c/n) * sqrt(n*p'*(1-p'))", end ="\n\n")
 
     print(f"{round(p - (c/n) * math.sqrt(n*p*(1-p)),5)} <= p <= {round(p + (c/n) * math.sqrt(n*p*(1-p)),5)}", end ="\n\n")
-
-binomialConfidenceP(90, 1200, 0.99)
 
 def normalConfidenceMy(stichprobe:list, y):
     """stichprobe = Liste mit Stichprobenwerten; y = Konfidenzniveau"""
@@ -67,10 +63,15 @@ def normalConfidenceMy(stichprobe:list, y):
 
     print(f"{mittelwert - c * (sigma/math.sqrt(n))} <= μ <= {mittelwert + c * (sigma/math.sqrt(n))}")
 
+#def normalConfidenceSigma():
 
+##########################################################input#########################################################
+
+#binomialConfidenceP(90, 1200, 0.99)
 
 #normalConfidenceMy([65,69,71,66,61,72,71,69,73,62,59,63,62,60,68,63], 0.95)
 
-#def normalConfidenceSigma():
+
+
 
 
