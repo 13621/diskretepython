@@ -63,13 +63,44 @@ def normalConfidenceMy(stichprobe:list, y):
 
     print(f"{mittelwert - c * (sigma/math.sqrt(n))} <= μ <= {mittelwert + c * (sigma/math.sqrt(n))}")
 
-#def normalConfidenceSigma():
+def normalConfidenceSigma(stichprobe:list, y):
+    """stichprobe... Liste mit Stichprobenwerten; y... Konfidenzniveau"""
+    n = len(stichprobe)
+
+    mittelwert = round(kennwerteStichproben.mittelwert(stichprobe),5)
+    
+    print(f"\nSchätzwert μ' = Mittelwert = (Summe über alle x(i)) / n = {mittelwert}")
+
+    sigma = round(kennwerteStichproben.standardabweichung(stichprobe),5)
+
+    print(f"Schätzwert σ' = s = (Summe über (x(i) - mittelwert)²) / (n-1) = {sigma}", end = "\n\n")
+    
+    print(f"\nZ = (n - 1)*(s²/σ²)                                  | Chi-Quadrat-verteilt mit f = n-1 = {n-1} Freiheitsgraden", end = "\n\n")
+    
+    print(f"P(c1 <= Z <= c2) = γ = {y}                          | γ... Konfidenzniveau", end = "\n\n")
+
+    print(f"P(c1 <= (n - 1)*(s²/σ²) <= c2) = γ", end = "\n\n")
+
+    print(f"P(Z <= c1) = (1 - γ)/ 2 = {round((1 - y)/ 2, 5)}                      | gesucht: c1 --> (1-γ)/2-Quantil der Chi-Quadrat-Verteilung mit f = n-1 = {n-1}")
+    print(f"P(Z <= c2) = (1 + γ)/ 2 = {round((1 + y)/ 2, 5)}                      | gesucht: c2 --> (1+γ)/2-Quantil der Chi-Quadrat-Verteilung mit f = n-1 = {n-1}", end ="\n\n")
+
+    c1 = round(scipy.stats.chi2.ppf((1 - y)/ 2, n-1),5)
+    c2 = round(scipy.stats.chi2.ppf((1 + y)/ 2, n-1),5)
+    print(f"c1 = {c1}      c2 = {c2}                      | c1 <= Z <= c2 umstellen, bis σ bzw. σ² allein in der Mitte ist", end = "\n\n")
+
+    print(f"((n-1) * s²) / c2 <= σ² <= ((n-1) * s²) / c1", end = "\n\n")
+
+    print(f"{round(((n-1)*sigma*sigma)/c2, 5)} <= σ² <= {round(((n-1)*sigma*sigma)/c1, 5)}", end = "\n\n")
+    print("bzw.", end = "\n\n")
+    print(f"{round(math.sqrt(((n-1)*sigma*sigma)/c2),5)} <= σ <= {round(math.sqrt(((n-1)*sigma*sigma)/c1),5)}", end = "\n\n")
 
 ##########################################################input#########################################################
 
 #binomialConfidenceP(90, 1200, 0.99)
 
 #normalConfidenceMy([65,69,71,66,61,72,71,69,73,62,59,63,62,60,68,63], 0.95)
+
+#normalConfidenceSigma([65,69,71,66,61,72,71,69,73,62,59,63,62,60,68,63], 0.95)
 
 
 
