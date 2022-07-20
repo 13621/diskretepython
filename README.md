@@ -32,15 +32,13 @@
 - `*verteilung*X()` liefert die Berechnungsformel und das Ergebnis für List(x) von *verteilung* für jedes P(X = x) wieder als Liste zurück
 - Übergabeparameter sind als Definition hinzugefügt
 - Hinweis: mit `print()` ausführen!
-
 ### Konfidenzintervalle
 - ganz runter scrollen bis zum kommentierten Input
 - `binomialConfidenceP()` berechnet das Konfidenzintervall für p von einer Binomialverteilung
 - `normalConfidenceMy()` berechnet das Konfigenzintervall für μ von einer Normalverteilung
-- `normalConfidenceSigma()` berechnet das Konfigenzintervall für σ von einer Normalverteilung (noch nicht implementiert)
+- `normalConfidenceSigma()` berechnet das Konfigenzintervall für σ von einer Normalverteilung
 - Übergabeparameter sind wieder in der Definition der jeweiligen Methode erklärt
 - Hinweis: ohne `print()` ausführen!
-
 ### Kennwerte einer Stichprobe
 - alle möglichen Funktionen sind in `kennwerteStichprobe.py` enthalten (selbsterklärend)
 - Hinweis: mit `print()` ausführen
