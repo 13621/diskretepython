@@ -182,7 +182,7 @@ class rsa:
 
 # print(symmetric.vigenere('linsen', 'carlos', True))
 
-# print(f"public key ist:{rsa.publickey(41, 131, 21)}")
+print(f"public key ist:{rsa.publickey(41, 131, 21)}")
 
 # print(f"private key ist: {rsa.privatekey(41, 131, 21)}")
 
