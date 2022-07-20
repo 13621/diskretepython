@@ -11,5 +11,15 @@
 - One Time Pad: In `diskrete_python.py` den Vigenere mit einem gleich langen Schlüssel aufrufen, also z.B. `print(symmetric.vigenere("dings", "brain"))`
 - RSA public key: Für Primzahlen 13 und 17 und e=9 `print(rsa.publickey(13, 17, 9))`. Die Funktion sucht nach einem neuen e und benutzt den, falls das eingegebene e nicht funktioniert. Ausgabe: (e, N)
 - RSA private key: `print(rsa.publickey(13, 17, 9))` für gleiches Beispiel wie oben. Ausgabe: (d, N)
-- RSA verschlüsseln: Um 'DINGSBUMS' mit dem öffentlichen Schlüssel von oben zu verschlüsseln, `print(rsa.chiffrieren("DINGSBUMS ", 7, 221))`. Achtung: Wenn die Länge der Nachricht ungerade ist, muss am Ende ein Leerzeichen sein! Die nachricht muss auch großgeschrieben sein
+- RSA verschlüsseln: Um 'DINGSBUMS' mit dem öffentlichen Schlüssel von oben zu verschlüsseln, `print(rsa.chiffrieren("DINGSBUMS ", 7, 221))`
+  - <b>Achtung:</b> Wenn die Länge der Nachricht ungerade ist, muss am Ende ein Leerzeichen sein! Die nachricht muss auch großgeschrieben sein
 - RSA entschlüsseln: `print(rsa.dechiffrieren([188, 11, 156], 55, 221))`
+### Chi-Quadrat-Test
+- um zum Input zu gelangen, in `chi-quadrat.py` ganz nach unten scrollen und dort ist es dann kommentiert
+- zu den Variablen:
+  - `classes` (Liste) enthält einfach nur die Klassen der zu testenden Stichprobe (z.B. Würfelaugen etc.) 
+  - `prevalences` (Liste) enthält die zu den einzelnen Klassen gegebenen absoluten Häufigkeiten (z.B. 22-mal die 1 geworfen); Reihenfolge passend zu `classes` beachten!
+  - `probabilities` (Liste) enthält die theoretischen Wahrscheinlichkeit, der Verteilung, auf die getestet werden soll. Um die Liste zu erstellen können die vorgefertigten Funktionen in `wk-verteilungen.py` genutzt werden (z.B. `hypergeometricXList(...)` --> siehe unten)
+   - sollte die Verteilung nicht implementiert sein, kann die Liste natürlich auch manuell an der Stelle gefüllt werden mit `append()`
+ - zum Ausführen dann einfach `chiSquareTest(...)` nutzen
+  - Erklärungen zu Übergabeparametern sind in der Definition der Funktion (in VS-Code Rechtklick) zu finden 
