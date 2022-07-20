@@ -39,3 +39,7 @@
 - `normalConfidenceSigma()` berechnet das Konfigenzintervall für σ von einer Normalverteilung (noch nicht implementiert)
 - Übergabeparameter sind wieder in der Definition der jeweiligen Methode erklärt
 - Hinweis: ohne `print()` ausführen!
+
+### Kennwerte einer Stichprobe
+- alle möglichen Funktionen sind in `kennwerteStichprobe.py` enthalten (selbsterklärend)
+- Hinweis: mit `print()` ausführen
